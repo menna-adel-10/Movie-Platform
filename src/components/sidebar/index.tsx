@@ -102,8 +102,9 @@ const Sidebar = () => {
                                   style={{
                                       width: "18px",
                                       filter: `${pathname === item.link
-                                          ? "InvertColors(58%) sepia(14%) saturate(3166%) brightness(9)"
-                                        : "" }`
+                                          ? "invert(58%) sepia(14%) saturate(3166%) hue-rotate(215deg) brightness(91%) contrast(87%)"
+                                          : "invert(84%)"
+                                          }`,
                                   }} />
                               <Hidden mdDown>
                                   <Typography>{item.name}</Typography>
