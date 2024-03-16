@@ -65,7 +65,7 @@ const Sidebar = () => {
               <Hidden smDown>
                   <Typography
                       variant="h5"
-                      component={h1}
+                      component="h1"
                       my={2}
                       fontWeight={400}
                       fontSize={18}
