@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { ReactNode } from "react";
+import Sidebar from "../components/sidebar";
 
 interface LayoutProps {
     children: ReactNode;
@@ -20,7 +21,11 @@ const Layout = ({children}: LayoutProps) => {
           gap: 3,
           overflowY: "hidden",
           height: "100vh"
-      }}></Box>
+      }}
+      >
+          <Sidebar />
+          <Box sx={{ width: "100%", overflowY: "scroll" }}>{children}</Box>
+      </Box>
   )
 }
 
