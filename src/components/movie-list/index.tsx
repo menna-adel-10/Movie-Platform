@@ -1,23 +1,24 @@
-import { Box, Grid, Paper } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 import { MovieDataType } from "../../assets/data";
 import MovieCard from "../movie-card";
 
 interface MovieListProps {
-    recommendList: MovieDataType[];
-}
-const MovieList = ({recommendList}: MovieListProps) => {
-  return (
-     <Box sx={{ display: "flex", gap: 2, overflowX: "scroll" }}>
-          {recommendList.map((movie) => (
-              <Grid item key={movie.id}>
-                  <Paper elevation={0} sx={{backgroundColor: "transparent"}}>
-                      <MovieCard movie={movie} />
-                  </Paper>
-              </Grid>
-          ))}
-          
-    </Box>
-  )
+  recommendList: MovieDataType[];
 }
 
-export default MovieList
+const MovieList = ({ recommendList }: MovieListProps) => {
+  console.log("The recommendList is : ", recommendList);
+  return (
+    <Grid container spacing={2}>
+      {recommendList.map((item) => (
+        <Grid item key={item.id} xs={12} sm={6} md={4} lg={3}>
+          <Paper elevation={0} sx={{ backgroundColor: "transparent" }}>
+            <MovieCard movie={item} />
+          </Paper>
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
+
+export default MovieList;
