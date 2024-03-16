@@ -1,9 +1,22 @@
+import { Box, Grid, Paper } from "@mui/material";
+import { MovieDataType } from "../../assets/data";
+import MovieTrendCard from "../movie-card/movieTrend";
+
 interface MovieTrendListProps {
-    trendingList: any;
+    trendingList: MovieDataType[];
 }
-const MovieTrendList = ({trendingList}: any) => {
+const MovieTrendList = ({trendingList}: MovieTrendListProps) => {
   return (
-    <div>MovieTrendList</div>
+      <Box sx={{ display: "flex", gap: 2, overflowX: "scroll" }}>
+          {trendingList.map((movie) => (
+              <Grid item key={movie.id}>
+                  <Paper elevation={0} sx={{backgroundColor: "transparent"}}>
+                      <MovieTrendCard movie={movie} />
+                  </Paper>
+              </Grid>
+          ))}
+          
+    </Box>
   )
 }
 
